@@ -1,0 +1,96 @@
+.submission{
+    padding: 2rem 2rem;
+    background: #353535;
+    color: #e5d7db;
+    font-size: small;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* width: 700px; */
+    place-items: center;
+}
+
+.submission h2{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.submission-2{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    width: 700px;
+}
+
+.section1{
+    padding-bottom: 0.7rem;
+}
+
+.sectionq{
+    margin-bottom: 0.8rem;
+    background-color: #555 !important;
+}
+
+.section2{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+    background-color: #262626;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.section3{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 4fr;
+    background-color: #262626;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.section4{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    background-color: #555;
+    border-radius: 5px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.section4 h1{
+    padding: 0.5rem 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.section4 pre{
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    background: #555;
+    border-radius: inherit;
+}
+
+.toggle-button{
+    padding: 0.5rem;
+    color: white;
+    text-decoration: underline;
+}
+
+.copy-button{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+.copy-button:hover{
+    background-color: #888;
+    color: white;
+}
+
+.subText{
+    padding-bottom: 0.3rem;
+}

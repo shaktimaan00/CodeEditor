@@ -1,0 +1,22 @@
+{
+  "1710874551394": {
+    "username": "YourUsernameHere",
+    "language": "javascript",
+    "stdin": "",
+    "sourceCode": "console.log(\"heelo\")",
+    "status": "Compilation Error",
+    "memory": null,
+    "time": null,
+    "submittedOn": "2024-03-19T18:55:51.394Z"
+  },
+  "1710874601608": {
+    "username": "YourUsernameHere",
+    "language": "javascript",
+    "stdin": "1,2,3",
+    "sourceCode": "let recursiveFunction = function (arr, x, start, end) {\r\n\r\n\t// Base Condition\r\n\tif (start > end) return false;\r\n\r\n\t// Find the middle index\r\n\tlet mid = Math.floor((start + end) / 2);\r\n\r\n\t// Compare mid with given key x\r\n\tif (arr[mid] === x) return true;\r\n\r\n\t// If element at mid is greater than x,\r\n\t// search in the left half of mid\r\n\tif (arr[mid] > x)\r\n\t\treturn recursiveFunction(arr, x, start, mid - 1);\r\n\telse\r\n\r\n\t\t// If element at mid is smaller than x,\r\n\t\t// search in the right half of mid\r\n\t\treturn recursiveFunction(arr, x, mid + 1, end);\r\n}\r\n\r\n// Driver code\r\nlet arr = [1, 3, 5, 7, 8, 9];\r\nlet x = 5;\r\n\r\nif (recursiveFunction(arr, x, 0, arr.length - 1)) {\r\n\tconsole.log(\"Element found!\");\r\n}\r\nelse { console.log(\"Element not found!\"); }\r\n\r\nx = 6;\r\n\r\nif (recursiveFunction(arr, x, 0, arr.length - 1)) {\r\n\tconsole.log(\"Element found!\");\r\n}\r\nelse { console.log(\"Element not found!\"); }\r\n",
+    "status": "Accepted",
+    "memory": 6944,
+    "time": "0.018",
+    "submittedOn": "2024-03-19T18:56:41.608Z"
+  }
+}
