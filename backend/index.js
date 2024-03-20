@@ -10,13 +10,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Enable CORS for all routes
-const corConfig = {
+const corsConfig = {
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credential: true,
 }
 
-app.use(cors(corConfig));
+app.use(cors(corsConfig));
+
+app.options("", cors(corsConfig))
 
 const routes = require('./routes/routes.js')(app, fs);
 
