@@ -10,13 +10,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Enable CORS for all routes
-app.use(cors(
-  {
-    origin: "https://code-editor-api.vercel.app/",
-    methods: ["POST", "GET", "UPDATE", "DELETE"], // Methods should be an array of strings
-    credentials: true
-  }
-));
+const corConfig = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credential: true,
+}
+
+app.use(cors(corConfig));
 
 const routes = require('./routes/routes.js')(app, fs);
 
