@@ -10,7 +10,7 @@ const MySubmissions = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://codeeditor-fzt0.onrender.com/users');
+                const response = await axios.get('http://localhost:3001/data');
                 setSubmissions(Object.values(response.data));
                 console.log(response.data);
             } catch (error) {
@@ -52,12 +52,15 @@ const MySubmissions = () => {
                     <div className='time'>Time</div>
                     <div className='memory'>Memory</div>
                 </div>
+                <div className='divider'></div>
                 {submissions.map((submission, index) => (
                     <li className='submission-2' key={index}>
                         <div>
                             <h1 className='subText'>Submission:</h1>
                             <div className='section2'>
-                                <div className='status'>{submission.status}</div>
+                                <div className={`status ${submission.codeStatus === "Accepted" ? 'text-green-600' : submission.codeStatus === "Time Limit Exceeded" ? 'text-orange-600' : 'text-red-600'}`}>
+                                    {submission.codeStatus}
+                                </div>
                                 <div className='language'>{submission.language}</div>
                                 <div className='time'>{submission.time}</div>
                                 <div className='memory'>{submission.memory}</div>
@@ -70,20 +73,21 @@ const MySubmissions = () => {
                             <div className='section4'>
                                 <pre className='sourcecode' >
                                     <code>
-                                        {submission.showFullCode
-                                            ? submission.sourceCode
-                                            : submission.sourceCode.slice(0, 100) + '...'}
+                                        {submission?.showFullCode
+                                            ? submission?.sourceCode
+                                            : submission?.sourceCode?.slice(0, 100) + '...'}
                                     </code>
                                 </pre>
-                                {submission.sourceCode.length > 100 && (
+                                {submission?.sourceCode?.length > 100 && (
                                     <button onClick={() => toggleCodeDisplay(index)} className='toggle-button'>
-                                        <i>{submission.showFullCode ? 'Show Less' : 'See More'}</i>
+                                        <i>{submission?.showFullCode ? 'Show Less' : 'See More'}</i>
                                     </button>
                                 )}
                                 <button onClick={() => copyCodeToClipboard(submission.sourceCode, index)} className='copy-button'>
-                                    {submission.copied ? 'Copied' : 'Copy Code'}
+                                    {submission?.copied ? 'Copied' : 'Copy Code'}
                                 </button>
                             </div>
+                            <div className='divider'></div>
                         </div>
                     </li>
                 ))}
