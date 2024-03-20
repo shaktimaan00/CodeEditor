@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const corsConfig = {
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credential: true,
+  credentials: true,
 }
 
 app.use(cors(corsConfig));
