@@ -41,7 +41,7 @@ export default function Home() {
 
   const createUser = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:3001/data', userData);
+      const response = await axios.post('https://codeeditor-fzt0.onrender.com/data', userData);
       console.log("db data" + response.data);
       return response.data; // Return any data received from the server
     } catch (error) {

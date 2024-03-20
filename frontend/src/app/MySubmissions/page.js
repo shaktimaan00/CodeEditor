@@ -10,7 +10,7 @@ const MySubmissions = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/data');
+                const response = await axios.get('https://codeeditor-fzt0.onrender.com/data');
                 setSubmissions(Object.values(response.data));
                 console.log(response.data);
             } catch (error) {
