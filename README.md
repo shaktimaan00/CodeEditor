@@ -14,3 +14,6 @@
 
 - **Endpoint**: `DELETE /data`
 - **Description**: This endpoint allows for the deletion of all data stored in the MongoDB database. When a DELETE request is made to this endpoint, all submissions and related data are removed from the database.
+
+- here is the deployed server link: `https://codeeditor-fzt0.onrender.com/`
+  Test it with different endpoints
